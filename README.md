@@ -32,6 +32,8 @@ pdf.pages
 pdf.extract_page(1, "page1.pdf")
 # extract all pages to separate pdfs (page-1.pdf, page-2.pdf, ...)
 pdf.extract_pages("page-%d.pdf")
+# check if file is a pdf, by checking magic bytes
+GsPdfUtils.is_pdf? "test.pdf"
 ```
 
 ## Contributing
