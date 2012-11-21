@@ -3,7 +3,7 @@
 This gem provides some simple pdf utilities based on Ghostscript.
 
 Currently it provides methods for detecting pdf files by magic, counting pdf pages
-and extracting single or all pages from a pdf.
+and extracting a single, all or a range of pages from a pdf.
 
 It is less resource hungry and faster than eg. pdftk or imagemagick for the tasks provided.
 
@@ -32,6 +32,8 @@ pdf.pages
 pdf.extract_page(1, "page1.pdf")
 # extract all pages to separate pdfs (page-1.pdf, page-2.pdf, ...)
 pdf.extract_pages("page-%d.pdf")
+# extract pages 2 to 5
+pdf.extract_page_range(2..5, "page2-5.pdf")
 # check if file is a pdf, by checking magic bytes
 GsPdfUtils.is_pdf? "test.pdf"
 ```

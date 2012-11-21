@@ -16,11 +16,16 @@ module GsPdfUtils
     end
 
     def extract_page(page, targetfile)
-      page = page.to_i
-      if page < 1 || page > pages
-        raise OutOfBounds, "page #{page} is out of bounds (1..#{pages})", caller
+      extract_page_range(page..page, targetfile)
+    end
+
+    def extract_page_range(page_range, targetfile)
+      page_from = page_range.first
+      page_to = page_range.last
+      if page_from < 1 || page_from > page_to || page_to > pages
+        raise OutOfBounds, "page range #{page_range} is out of bounds (1..#{pages})", caller
       end
-      cmd = "#{@gs.shellescape} -q -sDEVICE=pdfwrite -dSAFER -dFirstPage=#{page} -dLastPage=#{page} -o #{targetfile.shellescape} #{@file.shellescape} 2>#{NULL_DEVICE}"
+      cmd = "#{@gs.shellescape} -q -sDEVICE=pdfwrite -dSAFER -dFirstPage=#{page_from} -dLastPage=#{page_to} -o #{targetfile.shellescape} #{@file.shellescape} 2>#{NULL_DEVICE}"
       output = `#{cmd}`
       if $?.to_i > 0
         raise CommandFailed, "command #{cmd} failed with output: #{output}", caller
