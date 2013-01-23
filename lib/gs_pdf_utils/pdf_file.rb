@@ -49,7 +49,7 @@ module GsPdfUtils
     private
 
     def count_pages
-      output = @gs_runner.run "-dNODISPLAY -c \"(#{@file.shellescape}) (r) file runpdfbegin pdfpagecount = quit\""
+      output = @gs_runner.run_with_output "-dNODISPLAY -c \"(#{@file.shellescape}) (r) file runpdfbegin pdfpagecount = quit\""
       num_pages = output.to_i
       if num_pages == 0
         raise ProcessingError, "could not determine number of pages", caller
