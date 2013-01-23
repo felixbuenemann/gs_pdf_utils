@@ -36,6 +36,16 @@ module GsPdfUtils
       targetfiles = (1..pages).map {|page| sprintf(targetfile_template, page)}
     end
 
+    def append_files(*pdf_files, targetfile)
+      pdf_files.each do |pdf_file|
+        unless GsPdfUtils.is_pdf? pdf_file
+          raise BadFileType, "#{pdf_file} does not appear to be a PDF", caller
+        end
+      end
+      @gs_runner.run "-sDEVICE=pdfwrite -dSAFER -o #{targetfile.shellescape} #{@file.shellescape} #{pdf_files.map(&:shellescape).join ' '}"
+      targetfile
+    end
+
     private
 
     def count_pages

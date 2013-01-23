@@ -34,6 +34,8 @@ pdf.extract_page(1, "page1.pdf")
 pdf.extract_pages("page-%d.pdf")
 # extract pages 2 to 5
 pdf.extract_page_range(2..5, "page2-5.pdf")
+# append test2.pdf and test3.pdf to test.pdf and write to merged.pdf
+pdf.append_files "test2.pdf", "test3.pdf", "merged.pdf"
 # check if file is a pdf, by checking magic bytes
 GsPdfUtils.is_pdf? "test.pdf"
 ```
