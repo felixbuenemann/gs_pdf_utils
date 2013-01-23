@@ -40,6 +40,15 @@ pdf.append_files "test2.pdf", "test3.pdf", "merged.pdf"
 GsPdfUtils.is_pdf? "test.pdf"
 ```
 
+## Configuration
+
+If ghostscript is not in your path, you can configure it:
+```ruby
+GsPdfUtils.config do |c|
+  c.ghostscript_binary = "/path/to/gs"
+end
+```
+
 ## Contributing
 
 1. Fork it
