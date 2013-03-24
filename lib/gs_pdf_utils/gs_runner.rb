@@ -1,4 +1,6 @@
 # encoding: utf-8
+require 'rbconfig'
+
 module GsPdfUtils
   class GsRunner
     NULL_DEVICE = RbConfig::CONFIG['host_os'] =~ /mswin|mingw/ ? 'NUL' : '/dev/null'
