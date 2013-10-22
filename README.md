@@ -7,7 +7,7 @@ and extracting a single, all or a range of pages from a pdf.
 
 It is less resource hungry and faster than eg. imagemagick for the tasks provided.
 
-It might be much slower than pdftk though, so also look at [pdftk\_utils](https://github.com/fbuenemann/pdftk_utils).
+It might be much slower than pdftk though, so also look at [pdftk\_utils](https://github.com/felixbuenemann/pdftk_utils).
 
 It's still in alpha state and was freshly extracted from a project and has no spec coverage,
 still it might suite your needs.
@@ -16,7 +16,7 @@ still it might suite your needs.
 
 Add this line to your application's Gemfile:
 
-    gem 'gs_pdf_utils', :git => "https://github.com/fbuenemann/gs_pdf_utils"
+    gem 'gs_pdf_utils', :git => "https://github.com/felixbuenemann/gs_pdf_utils"
 
 And then execute:
 
