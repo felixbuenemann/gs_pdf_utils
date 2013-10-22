@@ -5,7 +5,9 @@ This gem provides some simple pdf utilities based on Ghostscript.
 Currently it provides methods for detecting pdf files by magic, counting pdf pages
 and extracting a single, all or a range of pages from a pdf.
 
-It is less resource hungry and faster than eg. pdftk or imagemagick for the tasks provided.
+It is less resource hungry and faster than eg. imagemagick for the tasks provided.
+
+It might be much slower than pdftk though, so also look at [pdftk\_utils](https://github.com/fbuenemann/pdftk_utils).
 
 It's still in alpha state and was freshly extracted from a project and has no spec coverage,
 still it might suite your needs.
