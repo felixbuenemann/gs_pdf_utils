@@ -34,7 +34,7 @@ module GsPdfUtils
 
     # targetfile_template = "test-%d.pdf"
     def extract_pages(targetfile_template)
-      @gs_runner.run "-o #{targetfile_template.shellescape} #{@file.shellescape}"
+      @gs_runner.run "-sDEVICE=pdfwrite -dSAFER -o #{targetfile_template.shellescape} #{@file.shellescape}"
       targetfiles = (1..pages).map {|page| sprintf(targetfile_template, page)}
     end
 
