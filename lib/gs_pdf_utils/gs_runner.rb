@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'rbconfig'
+require 'shellwords'
 
 module GsPdfUtils
   class GsRunner

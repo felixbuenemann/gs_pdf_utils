@@ -1,4 +1,6 @@
 # encoding: utf-8
+require 'shellwords'
+
 module GsPdfUtils
   class PdfFile
     def initialize(pdf_file, gs_runner = GsRunner.new)
