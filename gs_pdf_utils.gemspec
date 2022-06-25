@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["buenemann@louis.info"]
   gem.description   = %q{The gs_pdf_util gem wraps around ghostscript to provide simple pdf processing.}
   gem.summary       = %q{Ghostscript PDF Utilities}
-  gem.homepage      = "http://github.com/fbuenemann/gs_pdf_utils"
+  gem.homepage      = "https://github.com/felixbuenemann/gs_pdf_utils"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
